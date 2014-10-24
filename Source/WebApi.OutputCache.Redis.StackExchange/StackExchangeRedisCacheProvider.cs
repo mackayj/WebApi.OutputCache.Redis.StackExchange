@@ -73,7 +73,7 @@ namespace WebApi.OutputCache.Redis.StackExchange
 
 		public bool Contains(string key)
 		{
-			var exists = _database.StringGet(key).HasValue; // Is there another way to check if the key exists first?
+			var exists = _database.KeyExists(key);
 			return exists;
 		}
 
